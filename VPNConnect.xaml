@@ -1,0 +1,292 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="VPNConnect" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1248,1546" sap2010:WorkflowViewState.IdRef="VPNConnect_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="33">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="VPNConnect" sap:VirtualizedContainerService.HintSize="1258,1481" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="VPNCredential" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Parallel sap:VirtualizedContainerService.HintSize="1216,226" sap2010:WorkflowViewState.IdRef="Parallel_1">
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="VPNCredential" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[VPNCredential]" />
+      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="vpnui" />
+      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="secureid" />
+    </Parallel>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Application: Cisco AnyConnect Secure Mobility Client" sap:VirtualizedContainerService.HintSize="1216,1123" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="ad2b9a6d-0691-4d9a-a90f-b5e36325ccff" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="498,833" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch.Try>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="460,606" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="418,513" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,339" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DelayBefore="1" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ad2b9a6d-0691-4d9a-a90f-b5e36325ccff" Timeout="2" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="297, 100, 98, 23" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1313' title='Connect' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1313' title='Connect' check:text='unchecked' /&gt;" Guid="09233efa-ba13-4905-b50c-23a23e835f4b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAAbCAYAAACOY/p9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFNSURBVGhD7ZbBbcQgEEXdE91QSW60QitUkbMrmRgWw5gF5ETC+6X8kZ60DF6M5pmxN2FABsWABsWAxkXM9vVNPogOigFCR1fMvu/kQSgGFIoBhWJAoRhQMMV4K9u2VazvX/cEwYkxTkJvbiFwYoIzhwwrXuW8vY4fhWIiQZwx4kJv7iAWqZykLCsXztl6wqyf5N/W0ffzYks+Xh/3U8fGhbqXxWCJSQUbnY5X0c7ippMVW1wucil6bIPxCR/l0zrqHllgSA+Fuv5tvskvBk/MqAjtXCr8UeBePo5n+XwCKp112v+1+cVgiUlP86CV9Qr9VzE6387fzS8GTMzs5T9pZXcElPF1ncqklTX7eQI4MZGXHNVqzs/lVCTVfs7cr8Tk33r9Qf6U5PMHxP99+ZMCxYBCMaBQDCi3xZDPoINigNBxEcPACYoBDYqBDJEfjDTGCXHao6QAAAAASUVORK5CYII=" InformativeScreenshot="bba4a506211d438afe87a3257213e226.png" ScopeSelectorArgument="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect Secure Mobility Client' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Cisco AnyConnect | VITA SSL VPN" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="Never" ScopeGuid="42058c8c-d7e2-490a-b72e-d228a303b360" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1394" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="RSA" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: 000411191435 - RSA SecurID Token" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" OpenMode="IfNotOpen" ScopeGuid="712290cd-bb01-400b-969b-9207c9214e80" Version="V2">
+                                      <uix:NApplicationCard.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NClick ClickType="Single" DisplayName="Click 'Copy button'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="712290cd-bb01-400b-969b-9207c9214e80" Version="V1">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable DesignTimeRectangle="300, 180, 91, 31" FriendlyName="'Copy button'" FullSelectorArgument="&lt;ctrl name='Copy button' role='client' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Copy button' role='client' automationid='' check:text='Copy button' /&gt;" Guid="54ebb3e8-bc69-4120-8705-66c5e67e77c5" ImageBase64="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" InformativeScreenshot="b6cdfc6262ae7fb7ead775fb03ad8a58.png" ScopeSelectorArgument="&lt;wnd aaname='000411191435 - RSA Secure ID Token' app='securid.exe' cls='QWidget' title='000411191435 - RSA SecurID Token' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </uix:NApplicationCard.Body>
+                                      <uix:NApplicationCard.TargetApp>
+                                        <uix:TargetApp Area="1193, 164, 441, 269" FilePath="C:\Program Files (x86)\RSA SecurID Software Token\securid.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL9SURBVFhH7VRJaBRBFB1ccAEXUMQsUzVJRqMGu7rTRiKKOQiC4IJo0IAiHvTiSU8GFzwpCB4UDx4ighcRJAE9iBIQBIlRT4qCoAaEEDLT3THRuOv43u+aOImJmJOXfvDp+a9evf9rm1SCBAkSJPjvCLTZLqG8HYFyd0pkzMZ8be0cKxmFoNJUhMocCLU5FWn3aJhxduXTXrkd/gNDZf7CfMbdlqtyljKPqn1FDxkkQuUOhdr9gMKfbXyB+TDiLgqttTIBdJugf4hvAWOfRK/NN2gfhzV1aSsbBWhOQDsYaPf+28rGWQPa8dDwKjsspgUY9MLoWKidI3GYq+QxKeyv9LKiQwFoAsu3BtpbnlMr6wNljkPfFmRXzxXDEvRVO4swJx/XkGghX0ilpoiAiA3NA5uOANxhGUMB5nnlbYhNTKcI/gFxc7JbXWj6J+Y+Kfj+dDscIxa43dweSwnANdsGzjDnGfJ4JDLuvsHyhgUinAD0g7YHC/nO3YLfHfpFaWeLlcSwq3rEzqKMp3E+W3kMKJzjOXObrRRNmYPkpDFsLQpcwnd/IZudYSUj4OW0i+tgzqZt3i6CIooN8Hde+8tKCgSRMntEVIIo4xoUPoctfR3PFdN7uQp3iZUIsIDb8bi3m/mANvPh3Yd5P1hHRESxgR7dNFNyZU5b7rwIJgBXHej6Rhjeop4FC6nmqRzDTq63Hs+LvgQaPym8ci9b6ncDvWX+bOZ4p/N4duA+4rtCRH8B7wKaiGDa368bFpNDfp2+eWUOichC/kO0+56BHckIaTvqLjZA8FxtYzcsJU8HXAtXZykB/2Tii+Y+K6Sapr1L+zWYN1zaUCngcZHe0LcWCTRgXpQ2wAsJrotjeH57yfEyipaTeb7KvYJox++vjKKO9yPWmTbmY4FXsE48tHk1oJwqPrcOnvvY9xmmTR1MOhEXmPNZ8Qmh2DV0/xTxBnNf4os74K2hhveCjYG7yctKbjxg/CwXESlns6UmBxbKKb9svH+/BAkSJJgcUqlflx+0ZQi7gw8AAAAASUVORK5CYII=" InformativeScreenshot="7a0bb535b80d9dd102dc7363c8a10368.png" Selector="&lt;wnd aaname='000411191435 - RSA Secure ID Token' app='securid.exe' cls='QWidget' title='000411191435 - RSA SecurID Token' /&gt;" />
+                                      </uix:NApplicationCard.TargetApp>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NApplicationCard>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,242" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="42058c8c-d7e2-490a-b72e-d228a303b360" SecureText="[VPNCredential]" Version="V1">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="128, 107, 200, 20" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd cls='Edit' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Edit' /&gt;" Guid="fc748529-7734-490f-aed8-7168f92ef212" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAYCAYAAAC2jRLLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABxSURBVHhe7dfBCYAwAATBlG2nlhNfCqIB9+0MXAn7uDGBzwQDwRXM2HYzW+x0CwZ4EgwEKZgx3Bz+TTAQCAYCwUAgGAgEA4FgIBAMBIKBQDAQCAYCwUAgGAhSMPB3goFAMBAsgzGz9508eggEA5/NeQDt7TSXjCjMzQAAAABJRU5ErkJggg==" InformativeScreenshot="ddd6db382f26aac57ac02e8da9c1349a.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect | VITA SSL VPN' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="68, 109, 52, 20" ElementType="Text" FriendlyName="'Password'" FullSelectorArgument="&lt;wnd cls='Static' title='Password:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Static' title='Password:' check:text='Password:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAYAAACvKj4oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVFhH7VOJjQMhDKQtGqIduqEZivGNjfHCLkc+KQkRE6HAgJ+xvY5+HFvg6tgCvxI5kveRsh5nMIHeOXK2AiXlvxJPCWwNUiB3p4OP4GWB6F/QLubom856ivqo49X2wrWJ8N4mI1P0uhdebeq92sVw4uwdVuf3yOuMoUBJtDkbuLMB4bpkmcZ+xOHXFiqAY3MpoPjne6ecxjX/B18K3pz5/mGBtTK8WnEarL8rAftvdcSx0BLcilAF1P9LLH135mfnCf4ZUYUEbKpzcXxbqHQugRM7HU1MgnRjlPjbBTa8jS74cKhG0ihCGnB85LfYe73LEeLQzXIsxaij141olw+/OwpteZRD34QT5gKBJB96WR6JlXe1S8qL9xHH6JODw8knoJNwEQiwXfVteQD3CvxVbIGrYwtcHVvg6tgCV8cWuDaI/gBkCoK9eG0v3gAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NTypeInto.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NTypeInto>
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="434,153" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V1" />
+                                    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Cisco AnyConnect" sap:VirtualizedContainerService.HintSize="434,734" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Never" ScopeGuid="cd81b55f-5f9c-40e0-936d-c24438308388" Version="V2">
+                                      <uix:NApplicationCard.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,444" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NClick ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="42058c8c-d7e2-490a-b72e-d228a303b360" Version="V1">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable DesignTimeRectangle="170, 160, 75, 25" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;wnd cls='Button' title='OK' /&gt;" FuzzySelectorArgument="&lt;wnd cls='Button' title='OK' check:text='OK' /&gt;" Guid="6869aef6-8bb2-4fe2-b74e-489ea8e414a1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAdCAYAAADrcjF6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADzSURBVGhD7dbZDYUgEIVheqIbmqEVGrAISqEDQwNzBSPidXcSHJPz8EfD8vLFBRVjJPQs4DEqeH3fo4tt4nVdh046xAshoJ2Axwh4jIDHCHiMgMcIeIxE4nmrSSlV0taPc96S1pb8tNaZPG/cvLdl4vAyXA0UHJkJsMZL90qT9fPe1gnDS1AbIBNafX0ZLiULr36yFiVUQy7PaxFwqe/hJTg7fOs217VNFt7V13YYy99G45brGicM78YPI3iyuvoTv5A4vNT/UaUcRVavdQVbxtolEu8rAY8R8BgBjxHwGAGP0SkeOm4XD11rhYfuB7zHRfoB+DAjCIu46pYAAAAASUVORK5CYII=" InformativeScreenshot="8faf97fdbd47007553282a83fa127247.png" ScopeSelectorArgument="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect | VITA SSL VPN' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                            <uix:NClick ClickType="Single" DisplayName="Click 'Accept'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd81b55f-5f9c-40e0-936d-c24438308388" Version="V1">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable DesignTimeRectangle="176, 177, 96, 23" ElementType="Button" FriendlyName="'Accept'" FullSelectorArgument="&lt;wnd ctrlid='1' title='Accept' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='Accept' check:text='Accept' /&gt;" Guid="55e86fdf-5c1b-4b11-878c-cff506e725c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAAbCAYAAACKlipAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFJSURBVGhD7ZXBkcMgDEXpiW7UDK3QgIugFHfgi89ahJFNHGA9O7ug2ejwJo4gZOY/S5h931GRgwoRxilk2zZlIlUhy7IoE+gKWddVGYgKEYYKEYYKEYYKEYZsIR7QGIsuVNb+KaKFeLAIAGhdqK7/OsGhtQ5DbW0QgoUEdBbQrx5hVEgqpAOFAz4+k5hibAUSZOIoI2IH+dw9zbq76lFwOicFDy91n/6Hv8+TIlZIcBTq9XyMrSM04BFGEtId06uXMnMH0KfJcvL5huTzOu2dhFAhxdvKcJC1wHr18oxEFORv+/n3KqQBBZPGFdfym34PkukKoXFUqauQ51wj6l7zPxhZZb0IXkfWU25znznDbF3eD+ovl3rcc9ZZwiHc1LpqECI75M8R0AktVIgwPlOIYFSIMFSIML4VooynKUSZx5sQRQYqRBQ7fgE7NIJYjeS9yQAAAABJRU5ErkJggg==" InformativeScreenshot="0695b1eefd2e1931e651c5c2eae2e1d4.png" ScopeSelectorArgument="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                            </uix:NClick>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </uix:NApplicationCard.Body>
+                                      <uix:NApplicationCard.TargetApp>
+                                        <uix:TargetApp Area="1166, 373, 394, 211" FilePath="C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpnui.exe" IconBase64="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" InformativeScreenshot="ec1b609cc0553e72b93326bfe073aaea.png" Selector="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect' /&gt;" />
+                                      </uix:NApplicationCard.TargetApp>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </uix:NApplicationCard>
+                                  </Sequence>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="893, 183, 356, 202" FilePath="C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpnui.exe" IconBase64="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" InformativeScreenshot="a7d6e5cc088c45f9828f0778384b390b.png" Selector="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect | VITA SSL VPN' /&gt;" />
+                              </uix:NApplicationCard.TargetApp>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NApplicationCard>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,104" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </Sequence>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="464,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;VPN already connected&quot;]" />
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="1229, 230, 425, 198" FilePath="C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client\vpnui.exe" IconBase64="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" InformativeScreenshot="1a24151c48b9bccce682276e33289f4b.png" Selector="&lt;wnd app='vpnui.exe' cls='#32770' title='Cisco AnyConnect Secure Mobility Client' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
